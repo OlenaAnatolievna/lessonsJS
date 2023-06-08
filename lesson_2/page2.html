@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 2</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.<br>
+            Відповідь:<br>
+            <script>
+               const thisYear = 2023;
+               let userYearBorn = parseInt(prompt(`Уведіть Ваш рік народження:`));
+               // ----------------------------------
+               let userAge = thisYear - userYearBorn;
+               document.write(`Ваш вік: ${userAge} <br>`);
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

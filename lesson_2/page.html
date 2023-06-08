@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 2</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 0</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               Обчислити значення виразів <br>
+               Відповідь:<br>
+               <script>
+                  let a = 7;
+                  let b = 10;
+                  let c = 9;
+
+                  let s1 = a + 12 + b;
+                  document.write(`1. S1 = ${s1} <br>`);
+
+                  let s2 = Math.sqrt((a + b)/(2*a));
+                  document.write(`2. S2 = ${s2.toFixed([2])} <br>`);
+
+                  let s3 = Math.cbrt((a + b)*c);
+                  document.write(`3. S3 = ${s3.toFixed([2])} <br>`);
+                  let s4 = Math.sin((a / -b));
+                  document.write(`4. S4 = ${s4.toFixed([2])} <br>`);
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

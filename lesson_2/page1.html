@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 2</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 1</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці.<br>
+            Відповідь:<br>
+            <script>
+               let firstNumber = parseFloat(prompt(`Write first number:`));
+               let secondNumber = parseFloat(prompt(`Write second number:`));
+               // ----------------------------------
+               let s1 = firstNumber + secondNumber;
+               // Ще не пройшла таблиці, тому вивожу результат без них
+               document.write(`1. Сума = ${s1.toFixed([0])} <br>`);
+               // ----------------------------------
+               let s2 = firstNumber * secondNumber;
+               document.write(`2. Добуток = ${s2.toFixed([0])} <br>`);
+               // ----------------------------------
+               let s3 = firstNumber / secondNumber;
+               document.write(`3. Частка = ${s3.toFixed([3])} <br>`);
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

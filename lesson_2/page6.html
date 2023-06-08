@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 2</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 6</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.<br>
+            Відповідь:<br>
+            <div class="result">
+               Чек <br>
+                  <script>
+                     let productPriceOne = parseFloat(prompt(`Введіть ціну першого товару:`));
+                     let productAmountOne = parseInt(prompt(`Введіть кількість першого товару:`));
+      
+                     let productPriceTwo = parseFloat(prompt(`Введіть ціну другого товару:`));
+                     let productAmountTwo = parseInt(prompt(`Введіть кількість другого товару:`));
+      
+                     let productPriceThree = parseFloat(prompt(`Введіть ціну третього товару:`));
+                     let productAmountThree = parseInt(prompt(`Введіть кількість третього товару:`));
+                     // ----------------------------------
+                     let totalCostOne = productPriceOne * productAmountOne;
+                     document.write(`Загальна вартість першого товару ${totalCostOne.toFixed([2])} <br>`);
+
+                     let totalCostTwo = productPriceTwo * productAmountTwo;
+                     document.write(`Загальна вартість другого товару ${totalCostTwo.toFixed([2])} <br>`);
+
+                     let totalCostThree = productPriceThree * productAmountThree;
+                     document.write(`Загальна вартість третього товару ${totalCostThree.toFixed([2])} <br>`);
+
+                     let totalCost = totalCostOne + totalCostTwo + totalCostThree;
+                     document.write(`Загальна вартість товарів ${totalCost.toFixed([2])} <br>`);
+                  </script>
+            </div>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

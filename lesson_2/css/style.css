@@ -1,0 +1,146 @@
+@import url("reset.css");
+
+body {
+   font-family: "Times New Roman", sans-serif;
+   font-weight: 400;
+   font-size: 18px;
+   color: #000;
+}
+
+.wrapper {
+   overflow: clip;
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.wrapper > main {
+   flex-grow: 1;
+}
+/* ================================= */
+[class*="__container"] {
+   max-width: 1230px;
+   padding-left: 15px;
+   padding-right: 15px;
+   margin: 0 auto;
+}
+
+/* ================================== */
+
+.header {
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 5;
+   padding: 15px;
+   text-align: center;
+   background-color: rgb(55, 133, 139);
+}
+.header__title {
+   font-size: 24px;
+   line-height: 1.5;
+   text-transform: uppercase;
+   color: #fff;
+}
+.page {
+   height: 100%;
+   padding-top: 80px;
+   padding-bottom: 15px;
+   background-color: aliceblue;
+}
+.page__container {}
+.page__tasks {
+   background-color: lightblue;
+   padding: 15px;
+}
+.task {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 15px;
+}
+
+@media (max-width: 991.98px) {
+   .task {
+      grid-template-columns: repeat(3, 1fr);
+   }
+}
+@media (max-width: 671.98px) {
+   .task {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+@media (max-width: 491.98px) {
+   .task {
+      grid-template-columns: 1fr;
+   }
+}
+.task__item {
+   padding: 5px;
+   background-color: lightcyan;
+}
+.task__title {
+   padding-top: 5px;
+   padding-bottom: 10px;
+   text-align: center;
+   margin-bottom: 15px;
+   border-bottom: 1px solid darkcyan;
+}
+.task__link {
+   font-size: 20px;
+   color: darkcyan;
+   transition: all 0.3s;
+}
+.task__title:hover .task__link {
+   text-decoration: underline;
+   color: rgb(43, 193, 223);
+}
+.task__body {
+   text-align: justify;
+   line-height: 1.5;
+}
+.task__image {
+   position: relative;
+   padding-bottom: 72.750643%; /* 283/389 */
+   overflow: hidden;
+}
+.task__image img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.page__result {
+   max-width: 700px;
+   padding: 15px;
+   margin: 0 auto 30px;
+   background-color: #E5E5E5;
+   text-align: center;
+   border: 1px solid rgb(96, 117, 118);
+   border-radius: 15px;
+}
+.page__bottom {
+   display: block;
+   padding: 10px 20px;
+   margin: 0 auto;
+   max-width: 100px;
+   text-align: center;
+   border-radius: 7px;
+   background-color: cadetblue;
+   transition: all 0.8s;
+}
+.page__bottom:hover {
+   color: rgb(84, 84, 84);
+   background-color: lightblue;
+}
+.result {
+   width: 400px;
+   padding: 10px;
+   margin: 0 auto;
+   color: gray;
+   background-color: #fff;
+   border: 1px solid gray;
+}
