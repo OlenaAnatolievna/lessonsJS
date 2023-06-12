@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 3</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 7</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься. -->
+            Відповідь:<br>
+            <script>
+               let todayMonthNumber = parseInt(prompt(`Введіть номер місяця:`));
+               const january = 1;
+               const february = 2;
+               const march = 3;
+               const april = 4;
+               const may = 5;
+               const june = 6;
+               const july = 7;
+               const august = 8;
+               const september = 9;
+               const october = 10;
+               const november = 11;
+               const december = 12;
+               const seasonOne = 'зима';
+               const seasonTwo = 'весна';
+               const seasonThree = 'літо';
+               const seasonFour = 'осінь';
+               // ----------------------------------
+               switch (todayMonthNumber) {
+                  case january:
+                  case february:
+                  case december:
+                     document.write(`Зараз ${seasonOne}.`)
+                     break;
+                  case march:
+                  case april:
+                  case may:
+                     document.write(`Зараз ${seasonTwo}.`)
+                     break;
+                  case june:
+                  case july:
+                  case august:
+                     document.write(`Зараз ${seasonThree}.`)
+                     break;
+                  case september:
+                  case october:
+                  case november:
+                     document.write(`Зараз ${seasonFour}.`)
+                     break;
+                  default:
+                     document.write(`Ви невірно ввели номер місяця:(`)
+                     break;
+               }
+                  </script>
+            </div>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

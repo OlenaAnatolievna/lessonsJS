@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 3</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 6</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- З клавіатури вводиться номер дня тижня. Вивести на екран назву дня. -->
+            Відповідь:<br>
+            <script>
+               let todayDayNumber = parseInt(prompt(`Введіть номер дня тижня:`));
+               const monday = 1;
+               const tuesday = 2;
+               const wednesday = 3;
+               const thurthday = 4;
+               const friday = 5;
+               const saturday = 6;
+               const sunday = 7;
+               const firstDay = 'понеділок';
+               const secondDay = 'вівторок';
+               const thirdDay = 'середа';
+               const forthDay = 'четвер';
+               const fifthDay = 'пятниця';
+               const sixthDay = 'субота';
+               const seventhDay = 'неділя';
+               // ----------------------------------
+               switch (todayDayNumber) {
+                  case monday:
+                     document.write(`Сьогодні ${firstDay}.`)
+                     break;
+                  case tuesday:
+                     document.write(`Сьогодні ${secondDay}.`)
+                     break;
+                  case wednesday:
+                     document.write(`Сьогодні ${thirdDay}.`)
+                     break;
+                  case thurthday:
+                     document.write(`Сьогодні ${forthDay}.`)
+                     break;
+                  case friday:
+                     document.write(`Сьогодні ${fifthDay}.`)
+                     break;
+                  case saturday:
+                     document.write(`Сьогодні ${sixthDay}.`)
+                     break;
+                  case sunday:
+                     document.write(`Сьогодні ${seventhDay}.`)
+                     break;
+                  default:
+                     document.write(`Ви надто стомились.`)
+                     break;
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

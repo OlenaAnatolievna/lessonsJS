@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 3</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом, працівником, пенсіонером). -->
+            Відповідь:<br>
+            <script>
+               let userAge = parseInt(prompt('Введіть ваш вік'));
+               const firstBreakPoint = 3;
+               const secondBreakPoint = 7;
+               const thirdBreakPoint = 17;
+               const forthBreakPoint = 22;
+               const fifthBreakPoint = 60;
+               // ------------------------
+               if(userAge >= firstBreakPoint && userAge < secondBreakPoint)
+                     document.write(`Ваш вік ${userAge}. Ви дитина у садочку.`)
+                  else if(userAge >= secondBreakPoint && userAge < thirdBreakPoint)
+                        document.write(`Ваш вік ${userAge}. Ви школяр.`)
+                     else if(userAge >= thirdBreakPoint && userAge < forthBreakPoint)
+                           document.write(`Ваш вік ${userAge}. Ви студент.`)
+                        else if(userAge >= forthBreakPoint && userAge < fifthBreakPoint)
+                              document.write(`Ваш вік ${userAge}. Ви працівник.`)
+                           else if(userAge >= fifthBreakPoint)
+                                 document.write(`Ваш вік ${userAge}. Ви пенсіонер.`)
+                              else
+                              document.write(`Ви немовля.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

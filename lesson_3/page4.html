@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 3</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 5</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати. -->
+            Відповідь:<br>
+            <script>
+               let driverLicenseCategory = prompt(`Введіть вашу категорію водія латинськими літерами: А, В, С`);
+               const categoryA = 'A';
+               const categoryB = 'B';
+               const categoryC = 'C';
+               // ----------------------------------
+               if(driverLicenseCategory == categoryA)
+                     alert('Ви можете керувати мотоциклом.')
+                  else if(driverLicenseCategory == categoryB)
+                        alert('Ви можете керувати автомобілем.')
+                     else if(driverLicenseCategory == categoryC)
+                           alert('Ви можете керувати вантажним автомобілем.')
+                        else
+                           alert('У вас точно є права?');
+               document.write('Ви класний водій!))')
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

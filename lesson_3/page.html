@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 3</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або вивести, що кількість однакова. -->
+               Відповідь:<br>
+               <script>
+                  let nameFirstChild = prompt('Введіть Ваше імя:');
+                  let candiesAmountFirstChild = parseInt(prompt('Скільки у вас цукерок:'));
+
+                  let nameSecondChild = prompt('Введіть Ваше імя:');
+                  let candiesAmountSecondChild = parseInt(prompt('Скільки у вас цукерок:'));
+
+                  if(candiesAmountFirstChild > candiesAmountSecondChild)
+                        document.write(`Цукерок більше у ${nameFirstChild}`)
+                     else if(candiesAmountFirstChild < candiesAmountSecondChild)
+                           document.write(`Цукерок більше у ${nameSecondChild}`)
+                        else if(candiesAmountFirstChild === candiesAmountSecondChild)
+                              document.write('Цукерок однаково')
+                           else 
+                              alert('Некоректно введено дані')
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>
