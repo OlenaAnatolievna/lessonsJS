@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 5</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 1</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем. -->
+            Відповідь:<br>
+            <script>
+               let someNumAmount = parseInt(prompt('Введіть кількість випадкових чисел:'))
+               for (let i = 1; i <= someNumAmount; i++) {
+                  let randomNumber = 1 + Math.floor(Math.random()*100)
+                  document.write(`<ul><li>${randomNumber}</li></ul>`)
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
