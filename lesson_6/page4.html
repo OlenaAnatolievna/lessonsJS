@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 6</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 5</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Вивести на екран усі двоцифрові числа, у яких перша цифра є більшою або рівною за другу. -->
+            Відповідь:<br>
+            <script>
+               let numOne, numTwo
+               for(numOne = 1; numOne <= 9; numOne++){
+                  for(numTwo = 0; numTwo <= numOne; numTwo++)
+                  document.write(`${numOne}${numTwo}<br>`)
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 6</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 3</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Інвестор вклав S тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він одержить (без оподаткування). -->
+            Відповідь:<br>
+            <script>
+               let userDeposit = parseInt(prompt('Ваша сума вкладення:'))
+               let finalSum = userDeposit
+               const annualRate = 0.2
+               for (let i = 0; i < 20; i++) {
+                  finalSum += userDeposit*annualRate
+               }
+               document.write(`Ви одержите ${finalSum} тис. грн.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
