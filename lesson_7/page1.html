@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 7</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим. -->
+            <script>
+               let dayNumber = parseInt(prompt('Введіть номер дня тижня від 1 до 7:'))
+               function workDayOrNo(dayNumber) {
+                  if (dayNumber >= 1 && dayNumber <= 5)
+                     return 'робочий'
+                  else if (dayNumber <= 7)
+                     return 'вихідний'
+                  else 
+                     return 'неіснуючий'
+               }
+               alert(`Сьогодні ${workDayOrNo(dayNumber)} день тижня.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 7</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 5</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити функцію, яка за номером місяця повертає його назву. -->
+            Відповідь:<br>
+            <script>
+               let userMonth = parseInt(prompt('Введіть номер місяця:'))
+               function getMonthName(userMonth) {
+                  switch (userMonth) {
+                     case 1:
+                     return 'січень'
+                     case 2:
+                     return 'лютий'
+                     case 3:
+                     return 'березень'
+                     case 4:
+                     return 'квітень'
+                     case 5:
+                     return 'травень'
+                     case 6:
+                     return 'червень'
+                     case 7:
+                     return 'липень'
+                     case 8:
+                     return 'серпень'
+                     case 9:
+                     return 'вересень'
+                     case 10:
+                     return 'жовтень'
+                     case 11:
+                     return 'листопад'
+                     case 12:
+                     return 'грудень'
+                     default:
+                     return 'не існує'
+                  }
+               }
+               document.write(`Місяць під номером ${userMonth} - ${getMonthName(userMonth)}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 7</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 3</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!--  Створити окремі функції, які для 4 чисел знаходять:
+               1)суму;
+               2)добуток;
+               3)середнє арифметичне;
+               4)мінімальне значення. -->
+            Відповідь:<br>
+            <script>
+               let firstNumber = parseFloat(prompt('Введіть перше число:'))
+               let secondNumber = parseFloat(prompt('Введіть друге число:'))
+               let thirdNumber = parseFloat(prompt('Введіть третє число:'))
+               let fourthNumber = parseFloat(prompt('Введіть четверте число:'))
+               function totalSumm() {
+                  let summResult = firstNumber + secondNumber + thirdNumber + fourthNumber
+                  return summResult
+               }
+               function product() {
+                  let productResult = firstNumber * secondNumber * thirdNumber * fourthNumber
+                  return productResult
+               }
+               function arithmeticMean() {
+                  let arithmeticMeanResult = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4
+                  return arithmeticMeanResult
+               }
+               function minValue() {
+                  let minValueResult = Math.min(firstNumber, secondNumber, thirdNumber, fourthNumber)
+                  return minValueResult
+               }
+               document.write(`Для ваших чисел ${firstNumber}, ${secondNumber}, ${thirdNumber}, ${fourthNumber}:<br>сума = ${totalSumm()};<br>добуток = ${product()};<br>середнє арифметичне: ${arithmeticMean()};<br>мінімальне значення: ${minValue()}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
