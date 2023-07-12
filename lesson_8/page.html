@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 8</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).-->
+               <script>
+                  // функція для визначення середнього балу
+                  function getMediumScore(arrScore) {
+                     let averageScore
+                     let sumScore = 0
+                     for (let i = 0; i < arrScore.length; i++) {
+                        sumScore += arrScore[i]
+                     }
+                     return averageScore = sumScore / arrScore.length;
+                  }
+                  // функція для визначення мінімальної оцінки
+                  function getMinScore (arrScore) {
+                     let minScore = arrScore[0]
+                     for (let i = 1; i <arrScore.length; i++) {
+                        if (arrScore[i] < minScore)
+                           minScore = arrScore[i]
+                     }
+                     return minScore
+                  }
+                  // функція для визначення категорії
+                  function getCategory(getMinScore) {
+                     let studentCategory
+                     switch (getMinScore(arrScore)) {
+                        case 1:
+                        case 2:
+                           studentCategory = 'двійочник'
+                           break;
+                        case 3:
+                           studentCategory = 'трійочник'
+                           break;
+                        case 4:
+                           studentCategory = 'хорошист'
+                           break;
+                        case 5:
+                           studentCategory = 'відмінник'
+                           break;
+                        default:
+                           studentCategory = 'Некоректна оцінка'
+                           break;
+                     }
+                     return studentCategory
+                  }
+                  let arrScore = [4,5,5,4,3,4,5]
+                  let studentMediumScore = getMediumScore(arrScore)
+                  let category = getCategory(getMinScore)
+                  // document.write(`${getMinScore (arrScore)}`)
+                  document.write(`Середній бал: ${studentMediumScore.toFixed(2)},<br>Категорія учня: ${category}.`)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

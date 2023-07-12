@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 8</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 3</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!--   Дано послідовність оцінок учня. Підрахувати кількість:
+                  1)	двійок
+                  2)	кількість хороших оцінок (добре, відмінно);
+                  3)	кількість оцінок, які нижче середнього.-->
+            Відповідь:<br>
+            <script>
+               // 9 урок ще не продивилась.
+               // кількість двійок
+               function getAmountTwo(studentsScore) {
+                  let countTwo = 0
+                  for (let i = 0; i < studentsScore.length; i++) {
+                     if (studentsScore[i] === 2) 
+                        countTwo++
+                  }
+                  return countTwo
+               }
+               // кількість хороших оцінок (добре, відмінно)
+               function getAmountFourFive(studentsScore) {
+                  let countFourFive = 0
+                  for (let i = 0; i < studentsScore.length; i++) {
+                     if (studentsScore[i] === 4 || studentsScore[i] === 5) 
+                     countFourFive++
+                  }
+                  return countFourFive
+               }
+               // кількість оцінок, які нижче середнього (в моєму розумінні, менше за 3)
+               function getAmountMidleScores(studentsScore) {
+                  let countMidleScores = 0
+                  for (let i = 0; i < studentsScore.length; i++) {
+                     if (studentsScore[i] < 4) 
+                     countMidleScores++
+                  }
+                  return countMidleScores
+               }
+               // змінні
+               let studentsScore = [2,4,5,3,5,4,3,4,5,3,4,5]
+               let scoreTwo = getAmountTwo(studentsScore)
+               let scoreFourFive = getAmountFourFive(studentsScore)
+               let scoreMidle = getAmountMidleScores(studentsScore)
+               // виведення результату
+               document.write(`Двійок ${scoreTwo},<br>хороших оцінок ${scoreFourFive},<br>нижче середнього ${scoreMidle}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

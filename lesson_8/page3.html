@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 8</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).-->
+            Відповідь:<br>
+            <script>
+               // визначення доступних продуктів
+               function getAvailableProducts(arrProductPrices, arrProductTitles) {
+                  let products = ''
+                  for (let i = 0; i < arrProductPrices.length; i++) {
+                     if (arrProductPrices[i] <= userCash) 
+                     products += arrProductTitles[i]
+                  }
+                  return products
+               }
+               // змінні
+               let userCash = parseFloat(prompt('Введіть кількість грошей:'))
+               let arrProductPrices = [250, 500, 35, 150, 400, 300, 850]
+               let arrProductTitles = ['Сир, ','Кава, ','Шоколадка, ','Морозиво, ','Вино, ','Риба ,','Торт']
+               let availableProducts = getAvailableProducts(arrProductPrices, arrProductTitles)
+               // виведення результату
+               document.write(`Доступні для покупця продукти: ${availableProducts}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
