@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 9</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000).-->
+               <script>
+                  // функція генерації історії цін на цінні папери
+                  function getUserArray(userCountElements){
+                     let userArray = []
+                     for (let i = 0; i < userCountElements; i++) {
+                        let item = 1 + Math.floor(Math.random()*10000)
+                        userArray.push(item)
+                     }
+                     return userArray
+                  }
+                  // вводимо кількість елементів масиву
+                  let userCountElements = parseInt(prompt('Введіть кількість елементів:'))
+                  // створюємо масив цін на цінні папери з заданої кількості елементів
+                  let pricesArray = getUserArray(userCountElements)
+                  // виводимо на екран результат
+                  document.write(`Дано історію цін на цінні папери: ${pricesArray}<br><br>`)
+                  // -------------------------------
+                  // 1. Формуємо новий масив, у якому є тільки ті, що більші за 1000 грн
+                  let pricesAbove1000 = pricesArray.filter(item => item > 1000)
+                  // виводимо на екран результат
+                  document.write(`1. Новий масив, у якому є тільки ті ціни, що більші за 1000 грн:<br> ${pricesAbove1000}<br>`)
+                  // -------------------------------
+                  // 2. Визначити, чи є ціна, що менше 1000
+                  if(pricesArray.some(el => el < 1000 )) 
+                  document.write(`2. Є ціна, що менше 1000<br>`)
+                  else document.write(`2. Нема ціни, що менше 1000<br>`)
+                  // -------------------------------
+                  // 3. Визначати, чи усі ціни більше за 1000
+                  if(pricesArray.every(el => el > 1000 )) 
+                  document.write(`3. Усі ціни більше за 1000<br>`)
+                  else document.write(`3. Не усі ціни більше за 1000<br>`)
+                  // -------------------------------
+                  // 4. Підрахувати кількість цін, що більше за 1000
+                  let count1000 = pricesArray.reduce(
+                     (prevCount1000, el) => (el > 1000 ? prevCount1000 + 1 : prevCount1000),
+                     0
+                  )
+                  document.write(`4. Кількість цін, що більше за 1000: ${count1000}<br>`)
+                  // -------------------------------
+                  // Знайти першу ціну, що більше за 1000
+                  let firstElAbove1000 = pricesArray.find(el => el > 1000)
+                  document.write(`5. Перша ціна, що більше за 1000: ${firstElAbove1000}<br>`)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>
