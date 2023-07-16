@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 9</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 9</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Дано масив елементів. Знайти добуток додатних елементів.-->
+            <script>
+               let someArray = [-3,7,33,49,-17,5,-6,22,100]
+               // початкове значення добутка
+               let product = 1
+               // знаходимо добуток додатних елементів
+               for (const item of someArray) {
+                  if (item > 0) product *= item
+               }
+               // виводимо на екран результат
+               document.write(`Добуток додатних елементів: ${product}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
