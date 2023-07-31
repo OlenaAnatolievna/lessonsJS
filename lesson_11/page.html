@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 9</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- Знайти суми елементів у вказаній області (масиви розділені на 4 рівні частини).
+                     <ul>
+                        <li>1. Сума першої області:</li>
+                        <li>2. Сума другої області:</li>
+                        <li>3. Сума третьої області:</li>
+                        <li>4. Сума четвертої області:</li>
+                        <li>5. Сума парних рядків:</li>
+                        <li>6. Сума непарних стовпців:</li>
+                        <li>7. Сума у парних рядках - непарних стовпців, у непарних рядках - парних стовпців:</li>
+                     </ul>-->
+               <script>
+                  // ------ функція генерації числа
+                  function getRundomNumber(minValue, maxValue) {
+                     return (minValue + Math.floor(Math.random()*(maxValue - minValue +1)))
+                  }
+                  // ------ функція генерації рядків масиву
+                  function getSomeArray(someArrayLenght, minValue, maxValue) {
+                     let someArray = []
+                     for (let i = 0; i < someArrayLenght; i++) {
+                        let rundomNumber = getRundomNumber(minValue, maxValue)
+                        someArray.push(rundomNumber)
+                     }
+                     return someArray
+                  }
+                  // ------ функція генерації масиву
+                  function getSomeTable(rowsNumber, colsNumber, minValue, maxValue) {
+                     let someTable = []
+                     for (let i = 0; i < rowsNumber; i++) {
+                        let rundomRow = getSomeArray(colsNumber, minValue, maxValue)
+                        someTable.push(rundomRow)
+                     }
+                     return someTable
+                  }
+                  // ------ функція обчислення суми в заданій області
+                  function getAreaSum(array, rowStart, rowEnd, colStart, colEnd) {
+                     let sum = 0
+                     for (let rowNumber = rowStart; rowNumber < rowEnd; rowNumber++) {
+                        for (let colNumber = colStart; colNumber < colEnd; colNumber++) {
+                           sum += array[rowNumber][colNumber]
+                        }
+                     }
+                     return sum
+                  }
+                  // ------ функція обчислення суми парних рядків
+                  function getEvenRowSum(table){
+                     let sum = 0
+                     for (let i = 1; i < table.length; i += 2) {
+                        for (let j = 0; j < 4; j++) {
+                           sum += table[i][j]
+                        }
+                     }
+                     return sum
+                  }
+                  // ------ функція обчислення суми непарних стовпців
+                  function getOddColSum(table){
+                     let sum = 0
+                     for (let i = 0; i < table.length; i++) {
+                        for (let j = 0; j < 4; j += 2) {
+                           sum += table[i][j]
+                        }
+                     }
+                     return sum
+                  }
+                  // ------ функція обчислення суми у парних рядках - непарних стовпців, у непарних рядках - парних стовпців
+                  function getEvenRowOddColOddRowEvenColSum(table) {
+                     let sum1 = 0
+                     let sum2 = 0
+                     for (let i = 1; i < table.length; i += 2) {
+                        for (let j = 0; j < 4; j += 2) {
+                           sum1 += table[i][j]
+                        }
+                     }
+                     for (let i = 0; i < table.length; i += 2) {
+                        for (let j = 1; j < 4; j += 2) {
+                           sum2 += table[i][j]
+                        }
+                     }
+                     return sum1 + sum2
+                  }
+                  // ------ задаємо змінні
+                  let table = getSomeTable(4, 4, 1, 30)
+                  let firstSum = getAreaSum(table, 0, 2, 0, 2)
+                  let secondSum = getAreaSum(table, 0, 2, 2, 4)
+                  let thirdSum = getAreaSum(table, 2, 4, 0, 2)
+                  let fourthSum = getAreaSum(table, 2, 4, 2, 4)
+                  let evenRowSum = getEvenRowSum(table)
+                  let oddColSum = getOddColSum(table)
+                  let evenRowOddColOddRowEvenColSum = getEvenRowOddColOddRowEvenColSum(table)
+                  // ------ виводимо результат:
+                  document.write(`Початковий масив:<br> ${table.join("<br>")}<br>`)
+                  document.write(`1. Сума першої області: ${firstSum}.<br>`)
+                  document.write(`2. Сума другої області: ${secondSum}.<br>`)
+                  document.write(`3. Сума третьої області: ${thirdSum}.<br>`)
+                  document.write(`4. Сума четвертої області: ${fourthSum}.<br>`)
+                  document.write(`5. Сума парних рядків: ${evenRowSum}.<br>`)
+                  document.write(`6. Сума непарних стовпців: ${oddColSum}.<br>`)
+                  document.write(`7. Сума у парних рядках - непарних стовпців, у непарних рядках - парних стовпців: ${evenRowOddColOddRowEvenColSum}.<br>`)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

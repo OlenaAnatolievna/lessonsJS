@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 11</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Дано інформацію про прибуток К магазинів протягом тижня. Знайти :
+                     <ul>
+                        <li>1. Загальний прибуток кожного магазину за тиждень.</li>
+                        <li>2. Загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.).</li>
+                        <li>3. Загальний прибуток за робочі дні.</li>
+                        <li>4. Максимальний прибуток за середу.</li>
+                        <li>5. Сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200.</li>
+                     </ul> -->
+            <script>
+                  // ------- функція генерації числел для масиву прибутків для К магазинів
+                  function getRundomNumber(minValue, maxValue) {
+                     return (minValue + Math.floor(Math.random()*(maxValue - minValue +1)))
+                  }
+                  // ------ функція генерації рядків масиву
+                  function getRowsArray(someArrayLenght, minValue, maxValue) {
+                     let rowsArray = []
+                     for (let i = 0; i < someArrayLenght; i++) {
+                        let rundomNumber = getRundomNumber(minValue, maxValue)
+                        rowsArray.push(rundomNumber)
+                     }
+                     return rowsArray
+                  }
+                  // ------ функція генерації масиву прибутків для К магазинів
+                  function getProfitTable(rowsNumber, colsNumber, minValue, maxValue) {
+                     let profitTable = []
+                     for (let i = 0; i < rowsNumber; i++) {
+                        let rundomRow = getRowsArray(colsNumber, minValue, maxValue)
+                        profitTable.push(rundomRow)
+                     }
+                     return profitTable
+                  }
+                  // ------ функція генерації загального прибутку кожного магазину за тиждень
+                  function getEachShopProfitSum(table) {
+                     let eachShopProfitSum = []
+                     for (let i = 0; i < table.length; i++) {
+                        let sum = 0
+                        for (let j = 0; j < table[i].length; j++) {
+                           sum += table[i][j]
+                        }
+                        eachShopProfitSum.push(sum)
+                     }
+                     return eachShopProfitSum
+                  }
+                  // ------ функція генерації загального прибутку усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
+                  function getTotalSumEachDay(table) {
+                     let totalSumEachday = []
+                     for (let i = 0; i < table.length; i++) {
+                        let sum = 0
+                        for (let j = 0; j < table[i].length; j++) {
+                           sum += table[i][j]
+                        }
+                        totalSumEachday.push(sum)
+                     }
+                     return totalSumEachday
+                  }
+                  // ------ функція генерації загального прибутку за робочі дні
+                  function getTotalWorkingDaysProfit(table) {
+                     let sum = 0
+                     for (let i = 0; i < table.length; i++) {
+                        for (let j = 0; j < 5; j++) {
+                           sum += table[i][j]
+                        }
+                     }
+                     return sum
+                  }
+                  // ------ функція генерації максимального прибутку за середу
+                  function getMaxProfit(table) {
+                     let maxProfit = -Infinity
+                     for (let i = 0; i < table.length; i++) {
+                        if (maxProfit < table[i][2]) maxProfit = table[i][2]
+                     }
+                     return maxProfit
+                  }
+                  // ------ функція генерації загального списку зі значеннями, які більші за 200
+                  function getListAbove200(table) {
+                     let listAbove200 = table.flat().filter((element) => element > 200)
+                     return listAbove200
+                  }
+                  // ------ задаємо змінні
+                  let shopsNumber = parseInt(prompt('Введіть кількість магазинів:'))
+                  let table = getProfitTable(shopsNumber, 7, 1, 500)
+                  let eachShopProfit = getEachShopProfitSum(table)
+                  let totalSumEachDay = getTotalSumEachDay(table)
+                  let totalWorkingDaysProfit = getTotalWorkingDaysProfit(table)
+                  let maxWednesdayProfit = getMaxProfit(table)
+                  let profitAbove200 = getListAbove200(table)
+                  // ------ виводимо результат:
+                  document.write(`Масив прибутків для ${shopsNumber} магазинів:<br> ${table.join("<br>")}<br>`)
+                  document.write(`1. Масив загального прибутку кожного магазину за тиждень: ${eachShopProfit}<br>`)
+                  document.write(`2. Масив загального прибутку загального прибутку усіх магазинів по дням: ${totalSumEachDay}<br>`)
+                  document.write(`3. Масив загального прибутку за робочі дні: ${totalWorkingDaysProfit}<br>`)
+                  document.write(`4. Максимальний прибутку за середу: ${maxWednesdayProfit}<br>`)
+                  document.write(`5. загальний список (одновимірний масив) зі значенням, які що більші за 200: ${profitAbove200}<br>`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
