@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 12</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 6</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Дано масив імен. Застосовуючи відповідне сортування та бінарний пошук визначити, чи є у масиві ім’я довжиною 5 символів і під яким індексом. -->
+            Відповідь:<br>
+            <script>
+               // -------- масив імен
+               let namesArr = ['Lera','Lena','Viktoria','Edik','Olga','Timur','Andrij','Tarasyk','Oksana']
+               // -------- сортування за зростанням
+               let newSortedNamesArr = namesArr.sort((a,b) => a.length - b.length)
+               // -------- виводимо результат
+               document.write(`Відсортований масив: ${newSortedNamesArr}.<br>`)
+               // -------- визначити, чи є у масиві ім’я довжиною 5 символів і під яким індексом
+               let searchLength = 5
+               function includesLengthNameSearch(someArr, someElement) {
+                  let start = 0
+                  let end = someArr.length - 1
+                  while (start <= end) {
+                     let middle = Math.floor((start + end)/2)
+                     if (someArr[middle].length === someElement) return middle
+                     if (someArr[middle].length < someElement) start = middle + 1
+                     if (someArr[middle].length > someElement) end = middle - 1
+                  }
+                  return -1
+               }
+               // -------- виводимо результат
+               let searchIndex = includesLengthNameSearch(newSortedNamesArr, searchLength)
+               let searchName = newSortedNamesArr[searchIndex]
+               if (searchIndex !== -1)
+                     document.write(`Ім’я довжиною ${searchLength} символів '${searchName}' входить у масив під номером ${searchIndex}.`)
+                  else document.write(`Ім’я довжиною ${searchLength} символів не входить у масив.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
