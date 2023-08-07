@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 13</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Нехай Xo = 1, Xi = Xi-1 + 2i, де i = 1,2,... Визначити X10. Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів. -->
+            <script>
+               // ------ рекурсивний алгоритм
+               function getValue(i) {
+                  if (i === 0) return 1
+                  else return getValue(i-1)+2*i
+               }
+               let value = getValue(10)
+               // ------ нерекурсивний алгоритм
+               function getValue2 (i) {
+                  let result = 1
+                  for (let j = 1; j <= i; j++) {
+                     result += 2*j
+                  }
+                  return result
+               }
+               let value2 = getValue2 (10)
+               // ------ виводимо результат:
+               document.write(`Рекурсивний алгоритм:<br> ${value}<br>`)
+               document.write(`Нерекурсивний алгоритм:<br> ${value2}<br>`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

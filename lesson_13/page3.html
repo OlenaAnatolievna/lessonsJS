@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 13</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться перевірка.-->
+            <script>
+               // ------ функція генерування випадкових чисел
+               function getRandNum(min, max) {
+                  return min + Math.floor(Math.random()*(max - min + 1))
+               }
+               // ------ функція тренажер додавання
+               function getSimulator() {
+                     let randNum1 = getRandNum(1, 30)
+                     let randNum2 = getRandNum(1, 30)
+                     let userAnswer = parseInt(prompt(`Чому дорівнює: ${randNum1} + ${randNum2}?`))
+                     if (userAnswer === randNum1 + randNum2)
+                           alert('Вірно!')
+                        else alert('Не вірно!')
+               }
+               let simulator = setInterval(() => getSimulator(), 10000)
+               setTimeout(() => clearInterval(simulator), 50000)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 13</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!--  Реалізувати рекурсивну функцію знаходження степеня числа а.-->
+               <script>
+                  // ------ рекурсивна функція
+                  function step(a,x) {
+                     if (x === 1) return a
+                        else return step(a,x-1)*a
+                  }
+                  // ------ задаємо змінні
+                  let stepA = step(3,7)
+                  // ------ виводимо результат:
+                  document.write(`Результат: ${stepA}<br>`)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>
