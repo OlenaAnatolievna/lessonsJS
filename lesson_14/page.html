@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 14</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!--  Описати масив об’єктів – сайтів розроблених компанією з такими властивостями
+                     ----- Властивості ------
+                     назва компанії на час розробки (назву періодично змінюють)
+                     власник компанії
+                     споснсори (масив спонсорів)
+                        прізвище спонсора
+                        ім’я  спонсора
+                        сума вкладень спонсора
+                     рік випуску
+                     вартість сайту
+                  Знайти:
+                     1) загальну вартість усіх сайтів
+                     2) кількість сайтів, що було зроблено між 2000 та 2009 рр.
+                     3) кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+                     4) створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+                     5) знайти рік, коли прибуток був найбільшим
+                     6) упорядкувати список за спаданням прибутку
+                     7) Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000.-->
+               <script>
+                  // ------- масив об’єктів --------:
+                  let websites = [
+                     {
+                        nameCompany: 'Google',
+                        ownerCompany: 'Taras',
+                        sponsors: [
+                           {
+                              lastNameSponsor: 'Pilipenko',
+                              nameSponsor: 'Olena',
+                              investmentAmount: 30000,
+                           },
+                           {
+                              lastNameSponsor: 'Bigdan',
+                              nameSponsor: 'Ivan',
+                              investmentAmount: 17000,
+                           },
+                           {
+                              lastNameSponsor: 'Kovalenko',
+                              nameSponsor: 'Jon',
+                              investmentAmount: 10000,
+                           },
+                        ],
+                        graduationYear: 2017,
+                        price: 7000,
+                     },
+                     {
+                        nameCompany: 'United',
+                        ownerCompany: 'Oleg',
+                        sponsors: [
+                           {
+                              lastNameSponsor: 'Bigko',
+                              nameSponsor: 'Alina',
+                              investmentAmount: 13000,
+                           },
+                           {
+                              lastNameSponsor: 'Zelensky',
+                              nameSponsor: 'Tolya',
+                              investmentAmount: 10000,
+                           },
+                           {
+                              lastNameSponsor: 'Poryvaj',
+                              nameSponsor: 'Anna',
+                              investmentAmount: 5000,
+                           },
+                        ],
+                        graduationYear: 2003,
+                        price: 30000,
+                     },
+                     {
+                        nameCompany: 'Stimma',
+                        ownerCompany: 'Albina',
+                        sponsors: [
+                           {
+                              lastNameSponsor: 'Karol',
+                              nameSponsor: 'Tina',
+                              investmentAmount: 3000,
+                           },
+                           {
+                              lastNameSponsor: 'Plyakova',
+                              nameSponsor: 'Olga',
+                              investmentAmount: 27000,
+                           },
+                           {
+                              lastNameSponsor: 'Monatik',
+                              nameSponsor: 'Dmytro',
+                              investmentAmount: 30000,
+                           },
+                        ],
+                        graduationYear: 2016,
+                        price: 50000,
+                     },
+                     {
+                        nameCompany: 'Big Money',
+                        ownerCompany: 'Evgen',
+                        sponsors: [
+                           {
+                              lastNameSponsor: 'Vinichenko',
+                              nameSponsor: 'Oksana',
+                              investmentAmount: 75000,
+                           },
+                           {
+                              lastNameSponsor: 'Lutsij',
+                              nameSponsor: 'Alex',
+                              investmentAmount: 25000,
+                           },
+                           {
+                              lastNameSponsor: 'Baranovskij',
+                              nameSponsor: 'Sem',
+                              investmentAmount: 7000,
+                           },
+                        ],
+                        graduationYear: 2007,
+                        price: 70000,
+                     },
+                     {
+                        nameCompany: 'Space Y',
+                        ownerCompany: 'Ilona',
+                        sponsors: [
+                           {
+                              lastNameSponsor: 'Todorov',
+                              nameSponsor: 'Artur',
+                              investmentAmount: 30000,
+                           },
+                           {
+                              lastNameSponsor: 'Kuper',
+                              nameSponsor: 'Bredlei',
+                              investmentAmount: 37000,
+                           },
+                           {
+                              lastNameSponsor: 'Lopes',
+                              nameSponsor: 'Jen',
+                              investmentAmount: 23000,
+                           },
+                        ],
+                        graduationYear: 1998,
+                        price: 130000,
+                     },
+                  ]
+                  // ------- загальна вартість усіх сайтів --------:
+                  let websitesTotalPrice = websites.reduce(
+                     (prevTotalPrice, websites) => prevTotalPrice + websites.price,
+                     0
+                  )
+                  document.write(`1. Загальна вартість усіх сайтів: ${websitesTotalPrice} $.<br><br>`)
+                  // ------- кількість сайтів, що було зроблено між 2000 та 2009 рр. --------:
+                  let amountWebsitesBetweenYears = websites.reduce(
+                     (prevAmountSites, websites) => websites.graduationYear > 2000 && websites.graduationYear < 2009 ? prevAmountSites +1 : prevAmountSites,
+                     0
+                  )
+                  document.write(`2. Кількість сайтів, що було зроблено між 2000 та 2009 рр.: ${amountWebsitesBetweenYears}.<br><br>`)
+                  // ------- кількість сайтів, де сума спонсорських вкладень була більшою за 100000 --------:
+                  function getAmountWebsitesAbove100000 (someArr) {
+                     let sum = 0
+                     for (let obj of someArr) {
+                        let sumInvest = obj.sponsors.reduce((prevSumInvest, sponsors) => prevSumInvest + sponsors.investmentAmount,
+                        0);
+                        if (sumInvest > 100000) sum++
+                     }
+                     return sum
+                  }
+                  let amountWebsitesAbove100000 = getAmountWebsitesAbove100000 (websites)
+                  document.write(`3. Кількість сайтів, де сума спонсорських вкладень була більшою за 100000: ${amountWebsitesAbove100000}.<br><br>`)
+                  // ------- створити загальний список усіх спонсорів --------:
+                  function getAllSponsorsList(someArr) {
+                     let allSponsorsList = []
+                     for (let obj of someArr) {
+                        let allSponsorsItem = obj.sponsors.map(obj => `${obj.lastNameSponsor} ${obj.nameSponsor}`);
+                           allSponsorsList.push(allSponsorsItem)
+                     }
+                        return allSponsorsList
+                  }
+                  let allSponsors = getAllSponsorsList(websites)
+                  document.write(`4. Загальний список усіх спонсорів: ${allSponsors}. <br><br>`)
+                  // ------- знайти рік, коли прибуток був найбільшим --------:
+                  function getMaxProfitYear(someArr) {
+                     let maxProfit = -Infinity
+                     let maxProfitYear
+                     for (let obj of someArr) {
+                        if (obj.price > maxProfit) {
+                           maxProfit = obj.price
+                           maxProfitYear = obj.graduationYear
+                        }
+                     }
+                     return maxProfitYear
+                  }
+                  let maxProfitYear = getMaxProfitYear(websites)
+                  document.write(`5. Рік, коли прибуток був найбільшим: ${maxProfitYear}.<br><br>`)
+                  // ------- упорядкувати список за спаданням прибутку --------:
+                  function getSortedProfits(someArray) {
+                     for (let i = 0; i < someArray.length; i++) {
+                        someArray.sort((a, b) => b.price - a.price)
+                     }
+                     return someArray
+                  }
+                  let sortedProfits = getSortedProfits(websites)
+                  console.log('6. Список за спаданням прибутку:')
+                  console.log(sortedProfits)
+                  // ------- Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000 --------:
+                  let websitePriceUnderDollars10000 = []
+                  let websitePriceAboveDollars10000 = []
+                  for (let site of websites) {
+                     if (site.price < 10000) {
+                        websitePriceUnderDollars10000.push(JSON.parse(JSON.stringify(site)))
+                     }
+                     else websitePriceAboveDollars10000.push(JSON.parse(JSON.stringify(site)))
+                  }
+                  console.log('7. Список з копіями об’єктів, що містять сайти з вартістю до 10000:')
+                  console.log(websitePriceUnderDollars10000)
+                  console.log('Список з копіями об’єктів, що містять сайти з вартістю вище 10000:')
+                  console.log(websitePriceAboveDollars10000)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

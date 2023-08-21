@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 14</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N місяців. -->
+            <script>
+               let today = {
+                  day: 21,
+                  month: 8,
+                  year: 2023
+               }
+               function getNewYear(obj, N) {
+                  return Math.floor((obj.month + N) / 12) + obj.year
+               }
+               let userNumber = parseInt(prompt('Введіть кількість місяців:'))
+               let newYear = getNewYear(today, userNumber)
+               document.write(`Через ${userNumber} місяців буде - ${newYear} рік.<br>`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
