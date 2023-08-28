@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!--  Розробити клас Baner. -->
+            <script>
+               let imgArr = [
+                  {
+                     img: 'img/01.jpg',
+                     link: 'https://uk.wikipedia.org/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D1%96%D1%8F',
+                  },
+                  {
+                     img: 'img/02.jpg',
+                     link: 'https://uk.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%96%D1%8F',
+                  },
+                  {
+                     img: 'img/03.jpg',
+                     link: 'https://uk.wikipedia.org/wiki/%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F',
+                  },
+                  {
+                     img: 'img/04.jpg',
+                     link: 'https://uk.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B5%D0%B9%D1%86%D0%B0%D1%80%D1%96%D1%8F',
+                  },
+               ]
+               class Baner {
+                  constructor(imgArr) {
+                     this.imgArr = imgArr
+                  }
+                  getRandBaner() {
+                     let randBaner = Math.floor(Math.random() * this.imgArr.length)
+                     return this.imgArr[randBaner]
+                  }
+                  printBaner() {
+                     let printRandBaner = this.getRandBaner()
+                     document.write(`<a href="${printRandBaner.link}" target="_blank">Про країну</a><br><br>
+                     <img src="${printRandBaner.img}" alt="Image"><br>`)
+                  }
+               }
+               let randomBaner = new Baner(imgArr)
+               randomBaner.printBaner()
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

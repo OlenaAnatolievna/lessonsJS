@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 5</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!--  Розробити клас «Керівник танців». -->
+            <script>
+               const boysNamesArr = ["Tom", "Denys", "Alex", "Oleg", "Volodymyr", "Igor", "Taras", "Timur", "Jeck", "Oleksandr"]
+               const girlsNamesArr = ["Liudmyla", "Anna", "Dina", "Inna", "Tetiana", "Oksana", "Svitlana", "Polina", "Viktoria", "Olena"]
+               class DanceTeacher {
+                  constructor(boys, girls) {
+                     this.boys = boys
+                     this.girls = girls
+                  }
+                  getRandNum(minN, maxN) {
+                     return minN + Math.floor(Math.random() * (maxN - minN + 1))
+                  }
+                  getRandBoyName() {
+                     let randBoyName = this.getRandNum(0, this.boys.length - 1)
+                     return this.boys[randBoyName]
+                  }
+                  getRandGirlName() {
+                     let randGirlName = this.getRandNum(0, this.girls.length - 1)
+                     return this.girls[randGirlName]
+                  }
+                  getRandPairDancers() {
+                     document.write(`Пара: ${this.getRandBoyName()} + ${this.getRandGirlName()}.<br>`)
+                  }
+                  run() {
+                     return setInterval(() => {this.getRandPairDancers()}, 5000)
+                  }
+               }
+               let danceTeacher = new DanceTeacher(boysNamesArr, girlsNamesArr)
+               danceTeacher.run()
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

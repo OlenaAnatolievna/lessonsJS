@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити об’єкт «Авто». -->
+            Відповідь:<br>
+            <script>
+               class Auto {
+                  constructor(brand, tankSize, availableLitres, numberOfSeats, numberOfPassengers) {
+                     this.brand = brand
+                     this.tankSize = tankSize
+                     this.availableLitres = availableLitres
+                     this.numberOfSeats = numberOfSeats
+                     this.numberOfPassengers = numberOfPassengers
+                  }
+                  // ------- Заправка на вказану кількість літрів ------:
+                  refuelingCar(fuelLitres) {
+                     if (this.availableLitres + fuelLitres > this.tankSize) alert ('Достатньо палива!')
+                     else this.availableLitres += fuelLitres
+                     document.write(`Ви залили ${fuelLitres} літрів, в баку ${this.availableLitres} літрів.<br>`)
+                  }
+                  // ------- Виведення кількості пасажирів ------:
+                  passengersAmount() {
+                     document.write(`Кількість пасажирів: ${this.numberOfPassengers}.<br>`)
+                  }
+                  // ------- Додавання пасажирів ------:
+                  addNewPassengers(passAmount) {
+                     if (this.numberOfPassengers + passAmount > this.numberOfSeats) alert ('Зайві пасажири!')
+                     else this.numberOfPassengers += passAmount;
+                     document.write(`Стало пасажирів: ${this.numberOfPassengers}<br>`)
+                  }
+                  // ------- Висадка пасажирів ------:
+                  disembarcationPassengers(disPass) {
+                     if (this.numberOfPassengers - disPass < 0) alert ('Недостатньо пасажирів!')
+                     else this.numberOfPassengers -= disPass;
+                     document.write(`Залишилося пасажирів: ${this.numberOfPassengers}.<br>`)
+                  }
+               }
+               let car = new Auto('BMV', 100, 30, 5, 3)
+               car.refuelingCar(30)
+               car.passengersAmount()
+               car.addNewPassengers(2)
+               car.disembarcationPassengers(1)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

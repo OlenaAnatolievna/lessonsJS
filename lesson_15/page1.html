@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 1</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку. -->
+            <script>
+               // ------- об’єкт «Тир» ---------:
+               class ShootingGalleryObject {
+                  constructor(cellsNum, hareYes, hareNo) {
+                     this.cellsNum = cellsNum
+                     this.hareYes = hareYes
+                     this.hareNo = hareNo
+                     this.shootingGalleryField = this.getRandomHare()
+                  }
+                  // ------- масив з рандомними зайцями ---------:
+                  getRandomHare(hareYes, hareNo) {
+                     let shootingGalleryField = []
+                     for (let i = 0; i < this.cellsNum; i++) {
+                        let randomHare = this.hareNo + Math.floor(Math.random() * (this.hareYes - this.hareNo + 1))
+                        shootingGalleryField.push(randomHare)
+                     }
+                     return shootingGalleryField
+                  }
+                  // ------- виведення ігрового поля ---------:
+                  showShootingGalleryField(){
+                     document.write(`[${this.shootingGalleryField}]`)
+                  }
+                  // ------- постріл користувача ---------:
+                  userShot(){
+                     let usersShot = parseInt(prompt('Введіть число від 1 до 10'))
+                     if (this.shootingGalleryField[usersShot] === 1) return alert('Попали!')
+                     else  alert('Промазали!')
+                  }
+               }
+               let shootingGallery = new ShootingGalleryObject(10, 1, 0)
+               shootingGallery.userShot()
+               shootingGallery.showShootingGalleryField()
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

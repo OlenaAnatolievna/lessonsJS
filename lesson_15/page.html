@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 0</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!--  Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, а у іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням. Використати обидва методи стосовно обидвох об’єктів (використати call, apply).-->
+               <script>
+                  // --------- об’єкти --------:
+                  let object1 = {
+                     numbers: [10, 17, 33, 79, 13, 9, 45, 87],
+                     getSum: function () {
+                        let sum = 0;
+                        for (let num of this.numbers) {
+                           sum += num
+                        }
+                        return sum
+                     }
+                  }
+                  let object2 = {
+                     numbers: [3, 9, 5, 27, 18, 99, 58, 25],
+                     getProduct: function (min, max) {
+                        let product = 1;
+                        for (let num of this.numbers) {
+                           if (num > min && num < max) product *= num
+                        }
+                        return product
+                     }
+                  }
+                  // --------- знаходження суми --------:
+                  let sum1 = object1.getSum()
+                  // --------- знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням --------:
+                  let poduct2 = object2.getProduct(7, 73)
+                  // --------- використання call --------:
+                  let productObject1Call = object2.getProduct.call(object1, 3, 70)
+                  let sumObject2Call = object1.getSum.call(object2)
+                  // --------- використання apply --------:
+                  let productObject1Apply = object2.getProduct.apply(object1, [3, 70])
+                  let sumObject2Apply = object1.getSum.apply(object2)
+                  // --------- результати --------:
+                  document.write(`1. Числа першого об'єкта: ${object1.numbers.join(" , ")}<br>`)
+                  document.write(`2. Числа першого об'єкта: ${object2.numbers.join(" , ")}<br><br>`)
+                  document.write(`3. Сума чисел першого об'єкта: ${sum1}.<br>`)
+                  document.write(`4. Добуток чисел між заданими мінімальним і максимальних значенням першого об'єкта: ${poduct2}.<br><br>`)
+                  document.write(`5. Добуток чисел першого об'єкта в заданому діапазоні (метод call): ${productObject1Call}.<br>`)
+                  document.write(`6.Сума чисел другого об'єкта (метод call): ${sumObject2Call}.<br><br>`)
+                  document.write(`7. Добуток чисел першого об'єкта в заданому діапазоні (метод apply): ${productObject1Apply}<br>`)
+                  document.write(`8. Сума чисел другого об'єкта (метод apply): ${sumObject2Apply}<br>`);
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

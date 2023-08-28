@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 15</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 3</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Розробити клас MultChecker для перевірки таблиці множення.-->
+            <script>
+               // ------- клас MultChecker --------
+               class MultChecker {
+                  constructor() {
+                     this.checkNum = this.userNum()
+                     this.rightAnswer = 0
+                     this.wrongAnswer = 0
+                  }
+                  // ------- рандомне число --------
+                  randomNum(maxN = 9, minN = 1) {
+                     return minN + Math.floor(Math.random() * (maxN - minN + 1))
+                  }
+                  // ------- вибір числа користувачем --------
+                  userNum() {
+                     return parseInt(prompt('Введть число від 1 до 10:'))
+                  }
+                  // ------- перевірка множення --------
+                  productNum(maxN = 9, minN = 1) {
+                     let prodCheckNum
+                     do {
+                        let randNum = this.randomNum()
+                        let prodNum = this.checkNum * randNum;
+                        prodCheckNum = parseInt(prompt(`Чому дорівнює ${this.checkNum} * ${randNum} ?`))
+                        if (prodNum === prodCheckNum) this.rightAnswer++
+                           else if (prodNum !== prodCheckNum) this.wrongAnswer++
+                     } while (!isNaN(prodCheckNum))
+                  }
+               }
+               let multChecker = new MultChecker()
+               multChecker.productNum()
+               document.write(`Правильних відповідей: ${multChecker.rightAnswer},<br> неправильних відповідей: ${multChecker.wrongAnswer}.`)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
