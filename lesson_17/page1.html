@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 17</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити службове авто (водій, марка, номер). Створити клас таким чином, щоб можна було створити тільки один екземпляр цього класу. -->
+            <script>
+               class CompanyCar{
+                  static companyCarRef
+                  constructor(driver,brand,number){
+                     if(CompanyCar.companyCarRef)
+                        return CompanyCar.companyCarRef
+                     this.driver = driver
+                     this.brand = brand
+                     this.number = number
+                     CompanyCar.companyCarRef = this
+                  }
+                  toString(){
+                     return `Водій: ${this.driver}.<br>
+                        Марка: ${this.brand}.<br>
+                        Номер: ${this.number}.<br><br>`
+                  }
+               }
+               let companyCar = new CompanyCar("Olena","Mercedes","AA7819AI")
+               // -------- для перевірки ----------
+               let companyCar2 = new CompanyCar("Kiril","BMW","AA3377AI")
+               document.write(companyCar)
+                // -------- для перевірки ----------
+               document.write(companyCar2)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

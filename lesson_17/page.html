@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 17</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- Створити клас, що дозволяє виконувати такі операції над масивами: знаходження кількості додатних, кількості від’ємних, кількість входжень деякого числа (статичні методи). -->
+               <script>
+                  class NumOperations{
+                     constructor(someArr,num){
+                        this.someArr = someArr
+                        this.num = num
+                     }
+                     static positivNumCount(someArr){
+                        return someArr.reduce((count,el) => el > 0 ? count + 1 : count,0)
+                     }
+                     static negativeNumCount(someArr){
+                        return someArr.reduce((count,el) => el < 0 ? count + 1 : count,0)
+                     }
+                     static entryNum(someArr,num){
+                        return someArr.reduce((count,el) => el === num ? count + 1 : count,0)
+                     }
+                     toString(){
+                        return `Масив [${numArr}].<br>
+                        Додатних чисел: ${NumOperations.positivNumCount(this.someArr)}.<br>
+                        Відємних чисел: ${NumOperations.negativeNumCount(this.someArr)}.<br>
+                        Кількість входженнь ${this.num}: ${NumOperations.entryNum(this.someArr,this.num)}.`
+                     }
+                  }
+                  let numArr = [33,17,3,-23,11,375,4,-1,77,3,4,99,-173,45,-8,-36]
+                  let obj = new NumOperations(numArr,3)
+                  document.write(obj)
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

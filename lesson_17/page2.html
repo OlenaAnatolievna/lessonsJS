@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 17</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 3</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Створити клас Нагадувач. Кожні вказані кількості секунд (використати setInterval) програма нагадує про якусь подію (це просто текст) і також виводиться порядковий номер скільки раз вже нагадування було. Зробити так, щоб неможна було зробити одночасно декілька об’єктів-нагадувачів. Методи зупинки таймера, метод зміни повідомлення без зупинки таймера. -->
+            Відповідь:<br>
+            <script>
+               class Remainder {
+                  static #reminde
+                  constructor(message,interval) {
+                     if (Remainder.#reminde) return Remainder.#reminde
+                     this.message = message
+                     this.interval = interval
+                     this.counter = 0
+                     this.changeInterval = null
+                     Remainder.#reminde = this
+                  }
+                  printReminde() {
+                     if (this.interval > 0) {
+                        this.changeInterval = setInterval(() => {
+                           this.counter++
+                           alert(`${this.counter}. ${this.message}`)
+                        }, this.interval)
+                     } else {
+                        throw new Error('Інтервал не може бути менше за 0.')
+                     }
+                  }
+                  stopReminde() {
+                     clearInterval(this.changeInterval)
+                  }
+                  changeReminde(message) {
+                     this.message = message
+                  }
+               }
+               let reminder = new Remainder('Слава нації!',3000)
+               console.log(reminder);
+               reminder.printReminde()
+               setTimeout(() => {reminder.changeReminde('Пизд@ць російській федерації!')}, 10000)
+               setTimeout(() => {reminder.stopReminde()}, 20000)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

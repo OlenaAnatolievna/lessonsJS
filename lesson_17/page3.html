@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 17</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Особиста бібліотека. Картотека домашньої бібліотеки: дані книги (автори (піб, рік народження, короткий опис), назва книги, жанр, видавництво (назва, реєстраційний номер, рік засування)). Реалізувати розділи бібліотеки організувати додавання/вилучення книг та  вибір книг за назвою, за ПІБ автора, за видавництвом.-->
+            Відповідь:<br>
+            <script>
+               // --------- книги ---------
+               class Book {
+                  constructor(author, title, genre, publishing) {
+                     this.author = author
+                     this.title = title
+                     this.genre = genre
+                     this.publishing = publishing
+                  }
+               }
+               // --------- автори ---------
+               class Author {
+                  constructor(authorName, birth, briefDescr) {
+                     this.authorName = authorName
+                     this.birth = birth
+                     this.briefDescr = briefDescr
+                  }
+               }
+               // --------- видавництва ---------
+               class Publishing {
+                  constructor(publishingTitle, registrNumber, foundationYear) {
+                     this.publishingTitle = publishingTitle
+                     this.registrNumber = registrNumber
+                     this.foundationYear = foundationYear
+                  }
+               }
+               // --------- бібліотека ---------
+               class Library {
+                  constructor() {
+                     this.bookList = []
+                  }
+                  // --------- додавання ---------
+                  addBook(newBook) {
+                     this.bookList.push(newBook)
+                  }
+                  // --------- вилучення ---------
+                  withdrawalBook(newTitle) {
+                     let ind = this.bookList.findIndex((book) => book.title === newTitle)
+                     if (ind !== -1) {
+                     this.bookList.splice(ind, 1)
+                     }
+                  }
+                  // --------- вибір за назвою ---------
+                  selectByTitle(newTitle) {
+                     return this.bookList.filter((book) => book.title === newTitle)
+                  }
+                  // --------- вибір за автором ---------
+                  selectByAuthor(userNameAuthor) {
+                     return this.bookList.filter(
+                     (book) => book.author.authorName === userNameAuthor
+                     )
+                  }
+                  // --------- вибір за видавництвом ---------
+                  selectByPublishing(publisher) {
+                     return this.bookList.filter(
+                     (book) => book.publishing.publishingTitle === publisher
+                     )
+                  }
+               }
+               // --------- створення об'єктів ---------
+               let library = new Library()
+               let author1 = new Author('Стівен Кінг',1947,'Король жаху')
+               let publishing1 = new Publishing('Book-house', 3377, 2003)
+               let book1 = new Book(author1,'Сяйво','Жахи/Детектив',publishing1)
+               let author2 = new Author('Джоан Роулінг',1965,'авторка серії романів про Гаррі Поттера')
+               let publishing2 = new Publishing('World-book', 1133, 2017)
+               let book2 = new Book(author2,'Гаррі Поттер і келих вогню','Фантастика/Пригоди',publishing2)
+               let author3 = new Author('Леся Українка',1871,'українська письменниця, перекладачка')
+               let publishing3 = new Publishing('Ukraine-publishing', 7711, 1999)
+               let book3 = new Book(author3,'Лісова пісня','Драма-феєрія',publishing3)
+               library.addBook(book1)
+               library.addBook(book2)
+               library.addBook(book3)
+               // --------- виводимо в консоль ---------
+               console.log(library)
+               console.log(library.selectByTitle('Лісова пісня'))
+               console.log(library.selectByAuthor('Стівен Кінг'))
+               console.log(library.selectByPublishing('World-book'))
+               library.withdrawalBook('Сяйво')
+               console.log(library)
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
