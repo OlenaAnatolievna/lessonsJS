@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 18</title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1 class="header__title">Задача 1</h1>
+      </header>
+      <main class="page">
+         <div class="page__container">
+            <div class="page__result">
+               <!-- Розробити калькулятор. -->
+               <style>
+                  .calc,
+                  .calc__inputs {
+                     display: flex;
+                     flex-direction: column;
+                     gap: 15px;
+                  }
+                  .calc__input,
+                  .calc__result {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     gap: 15px;
+                  }
+                  .input {
+                     padding: 8px;
+                  }
+                  .calc__buttons {
+                     display: flex;
+                     justify-content: center;
+                     gap: 15px;
+                     padding-bottom: 15px;
+                     border-bottom: 1.5px solid rgb(29, 90, 92);
+                  }
+                  .input-label,
+                  .result-label {
+                     font-size: 20px;
+                     text-decoration: underline;
+                     color: rgb(22, 84, 101);
+                  }
+                  .btn {
+                     padding: 10px 15px;
+                     font-size: 20px;
+                     font-weight: 700;
+                     text-align: center;
+                     background-color: rgb(67, 205, 182);
+                     color: rgb(255, 255, 255);
+                     border: 1px solid rgb(29, 90, 92);
+                     border-radius: 5px;
+                     transition: all 0.4s ease 0s;
+                  }
+                  .btn:hover {
+                     background-color: rgb(47, 131, 136);
+                  }
+               </style>
+               <div class="calc">
+                  <div class="calc__inputs">
+                     <div class="calc__input">
+                        <label class="input-label" for="firstNum">Перше число</label>
+                        <input id="firstNum" placeholder="0" class="input">
+                     </div>
+                     <div class="calc__input">
+                        <label class="input-label" for="secondNum">Друге число</label>
+                        <input id="secondNum" placeholder="0" class="input">
+                     </div>
+                  </div>
+                  <div class="calc__buttons">
+                     <button id="sum" type="button" class="btn">Додавання</button>
+                     <button id="minus" type="button" class="btn">Віднімання</button>
+                     <button id="product" type="button" class="btn">Множення</button>
+                     <button id="division" type="button" class="btn">Ділення</button>
+                  </div>
+                  <div class="calc__result">
+                     <label id="labelResult" class="result-label" for="inputResult">Результат</label>
+                     <input id="inputResult" placeholder="0" class="input">
+                  </div>
+               </div>
+               <script>
+                  function getSum() {
+                     const firstNum = parseFloat(document.getElementById('firstNum').value)
+                     const secondNum = parseFloat(document.getElementById('secondNum').value)
+                     const res = firstNum + secondNum
+                     document.getElementById('inputResult').value = res.toFixed(2)
+                  }
+                  function getMinus() {
+                     const firstNum = parseFloat(document.getElementById('firstNum').value)
+                     const secondNum = parseFloat(document.getElementById('secondNum').value)
+                     const res = firstNum - secondNum
+                     document.getElementById('inputResult').value = res.toFixed(2)
+                  }
+                  function getProduct() {
+                     const firstNum = parseFloat(document.getElementById('firstNum').value)
+                     const secondNum = parseFloat(document.getElementById('secondNum').value)
+                     const res = firstNum * secondNum
+                     document.getElementById('inputResult').value = res.toFixed(2)
+                  }
+                  function getDiv() {
+                     const firstNum = parseFloat(document.getElementById('firstNum').value)
+                     const secondNum = parseFloat(document.getElementById('secondNum').value)
+                     const res = firstNum / secondNum
+                     document.getElementById('inputResult').value = res.toFixed(2)
+                  }
+                  const sumBtn = document.getElementById('sum')
+                  const minusBtn = document.getElementById('minus')
+                  const productBtn = document.getElementById('product')
+                  const divBtn = document.getElementById('division')
+                  sumBtn.onclick = getSum
+                  minusBtn.onclick = getMinus
+                  productBtn.onclick = getProduct
+                  divBtn.onclick = getDiv
+               </script>
+            </div>
+            <a class="page__bottom" href="index.html">BACK</a>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

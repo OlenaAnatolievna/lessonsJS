@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 18</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 5</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Користувач задає кількість рядків і стовпців. Відобразити таблицю, у клітинках якої знаходяться числа 1, 2, 3, … -->
+            <style>
+               .row,
+               .column {
+                  padding: 8px;
+                  margin: 0px 15px 15px;
+                  border: 1px solid black;
+                  border-radius: 7px;
+               }
+               table, tr, td {
+                  border:1px solid black
+               }
+               table {
+                  margin: 0 auto;
+                  background-color: rgb(104, 237, 255)
+               }
+               td{
+                  text-align: center;
+                  width: 30px;
+                  height: 30px;
+                  background-color: white;
+               }
+               .btn {
+                  max-width: 200px;
+                  padding: 10px 15px;
+                  margin: 0 auto;
+                  font-size: 20px;
+                  font-weight: 700;
+                  text-align: center;
+                  background-color: rgb(67, 199, 177);
+                  color: rgb(255, 255, 255);
+                  border: 1px solid rgb(29, 90, 92);
+                  border-radius: 5px;
+                  transition: all 0.4s ease 0s;
+               }
+               .btn:hover {
+                  background-color: rgb(47, 131, 136);
+               }
+            </style>
+            <script>
+               // -------- input - кількість рядків --------
+               let rowInput = document.createElement('input')
+               rowInput.setAttribute('type', 'number')
+               rowInput.setAttribute('placeholder', 'Скільки рядків')
+               rowInput.classList.add('row')
+               document.querySelector('.page__result').append(rowInput)
+               // -------- input - кількість стовпців --------
+               let columnInput = document.createElement('input')
+               columnInput.setAttribute('type', 'number')
+               columnInput.setAttribute('placeholder', 'Скільки стовпців')
+               columnInput.classList.add('column')
+               document.querySelector('.page__result').append(columnInput)
+               // -------- кнопка --------
+               let btn = document.createElement('button')
+               btn.classList.add('btn')
+               document.querySelector('.page__result').append(btn)
+               btn.innerText = 'Створити'
+               // -------- створення таблиці --------
+               function createTable (rows, columns) {
+                  let num = 0
+                  const table = document.createElement('table')
+                  document.querySelector('.page__result').append(table)
+                  for (let i = 0; i < rows; i++) {
+                     const tr = document.createElement('tr')
+                     for (let j = 0; j < columns; j++) {
+                        num ++
+                        const td = document.createElement('td')
+                        td.innerText = num
+                        tr.append(td)
+                     }
+                     table.append(tr)
+                  }
+               }
+               // -------- параметри (числа) для функції створення таблиці --------
+               function getRowsAndColumns() {
+                  let rowNum = parseInt(document.querySelector('.row').value)
+                  let columnNum = parseInt(document.querySelector('.column').value)
+                  createTable(rowNum, columnNum)
+               }
+               window.onload = function(){
+                  document.querySelector('.btn').onclick = getRowsAndColumns
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

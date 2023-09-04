@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 18</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 4</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Наперед задано у скрипті масив зі списком бажань. Після завантаження сторінки випадковим чином вибираються 3 і відображаються у окремих div (їх треба створити і додати на сторінку).-->
+            <style>
+               h3 {
+                  margin-bottom: 15px;
+                  font-size: 20px;
+                  color: rgb(238, 43, 118);
+               }
+               .page__result div {
+                  font-size: 20px;
+                  color: rgb(40, 143, 171);
+               }
+            </style>
+            <h3>Ваші побажання:</h3>
+            <script>
+               let wishArr = ['Love','Peace','Travel to Paris','Car','Appartment','Travel to Milan','Interesting job','Travel to London','Money','Travel to USA','Health','Travel to China','Children','iPhone','Travel to Spain']
+               function randWish(someArr) {
+                  for (let i = 0; i < 3; i++) {
+                     const randInd = Math.floor(Math.random() * someArr.length)
+                     let div = document.createElement('div')
+                     div.innerHTML = `${i+1}. ${someArr[randInd]}.`
+                     document.querySelector('.page__result').append(div)
+                  }
+               }
+               window.onload = function(){
+                  randWish(wishArr)
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>

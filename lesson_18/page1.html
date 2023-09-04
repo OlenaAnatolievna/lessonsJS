@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title>LESSON 18</title>
+</head>
+<body>
+   <header class="header">
+      <h1 class="header__title">Задача 2</h1>
+   </header>
+   <main class="page">
+      <div class="page__container">
+         <div class="page__result">
+            <!-- Зробити конвертер валют (курси валют – константи у скрипті). -->
+            <style>
+               .converter {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 15px;
+               }
+               .converter__input-sum,
+               .converter__input-usd,
+               .converter__input-euro {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 15px;
+               }
+               button {
+                  max-width: 200px;
+                  padding: 10px 15px;
+                  margin: 0 auto;
+                  font-size: 20px;
+                  font-weight: 700;
+                  text-align: center;
+                  background-color: rgb(67, 205, 182);
+                  color: rgb(255, 255, 255);
+                  border: 1px solid rgb(29, 90, 92);
+                  border-radius: 5px;
+                  transition: all 0.4s ease 0s;
+               }
+               button:hover {
+                  background-color: rgb(47, 131, 136);
+               }
+               label {
+                  font-size: 20px;
+                  color: rgb(22, 84, 101);
+               }
+               input {
+                  padding: 8px;
+                  border: 1px solid black;
+                  border-radius: 7px;
+               }
+            </style>
+            <div class="converter">
+               <div class="converter__input-sum">
+                  <label for="inputGrn">Сума в гривнях</label>
+                  <input id="inputGrn" type="text" placeholder="0">
+               </div>
+               <button id="convertBtn" type="button">Конвертувати</button>
+               <div class="converter__input-usd">
+                  <label for="inputUsd">Сума в доларах</label>
+                  <input id="inputUsd" type="text" placeholder="0">
+               </div>
+               <div class="converter__input-euro">
+                  <label for="inputEuro">Сума в євро</label>
+                  <input id="inputEuro" type="text" placeholder="0">
+               </div>
+            </div>
+            <script>
+               const usdRate = 37.5
+               const euroRate = 40.5
+               function converter() { 
+                  const grn = parseFloat(document.getElementById('inputGrn').value)
+                  const usd = grn / usdRate
+                  const euro = grn / euroRate
+                  document.getElementById('inputEuro').value = usd.toFixed(2)
+                  document.getElementById('inputUsd').value = euro.toFixed(2)
+               }
+               window.onload = function () {
+                  document.getElementById('convertBtn').onclick = converter
+               }
+            </script>
+         </div>
+         <a class="page__bottom" href="index.html">BACK</a>
+      </div>
+   </main>
+</div>
+</body>
+</html>
